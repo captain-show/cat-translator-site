@@ -41,6 +41,33 @@ body {
   background: #fff;
   border: 4px solid #e0d7fa;
 }
+.hero .download-buttons {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 2.2rem;
+}
+.hero .download-btn {
+  width: 220px;
+  background: linear-gradient(90deg, #ff7eb3 0%, #ff758c 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  border-radius: 2.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 24px 0 #ff7eb34d;
+  transition: background 0.2s, transform 0.1s;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .download-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
 .btn-main {
   background: linear-gradient(90deg, #ff7eb3 0%, #ff758c 100%);
   color: #fff;
@@ -82,6 +109,9 @@ body {
   box-shadow: 0 2px 12px 0 #a084e81a;
   min-height: 140px;
   justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 400px;
 }
 .feature-icon {
   width: 120px;
@@ -125,6 +155,7 @@ body {
   box-shadow: 0 4px 24px 0 #a084e81a;
   max-width: 400px;
   margin: 0 auto;
+  width: 400px;
 }
 .review img {
   width: 120px;
@@ -169,15 +200,18 @@ blockquote {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 1.2rem;
+  max-width: 100%;
 }
+
 .gallery-list img {
-  width: 140px;
+  width: 160px;
   height: 380px;
   object-fit: cover;
   border-radius: 2rem;
   box-shadow: 0 4px 24px 0 #a084e81a;
   background: #fff;
   border: 2px solid #e0d7fa;
+  flex: 0 0 auto;
 }
 
 .faq {
@@ -357,16 +391,64 @@ blockquote {
   .feature, .review {
     flex: 1 1 0;
     min-width: 220px;
+    max-width: 400px;
+    width: 400px;
+  }
+  .gallery-list {
+    max-width: 1200px;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
   }
   .gallery-list img {
-    width: 200px;
+    width: 240px;
     height: 480px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/2;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 699px) {
+  .gallery-list {
+    max-width: 800px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    place-items: center;
+  }
+  .gallery-list img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/2;
+    max-width: 220px;
+    max-height: 440px;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .gallery-list img {
+    width: 100%;
+    height: auto;
+    max-width: 160px;
+    max-height: 400px;
+    justify-self: center;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
 }
 
 @media (max-width: 500px) {
   .header h1 {
-    font-size: 1.5rem;
+    font-size: 2.1rem;
   }
   .hero-img {
     width: 120px;
@@ -374,9 +456,9 @@ blockquote {
     border-radius: 1.2rem;
   }
   .gallery-list img {
-    width: 90px;
-    height: 240px;
-    border-radius: 1.2rem;
+    width: 120px;
+    height: 400px;
+    border-radius: 2rem;
   }
 }
 
