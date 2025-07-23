@@ -205,7 +205,7 @@ blockquote {
 
 .gallery-list img {
   width: 160px;
-  height: 380px;
+  height: 420px;
   object-fit: cover;
   border-radius: 2rem;
   box-shadow: 0 4px 24px 0 #a084e81a;
@@ -402,11 +402,10 @@ blockquote {
     gap: 1.2rem;
   }
   .gallery-list img {
-    width: 240px;
-    height: 480px;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/2;
+    width: 180px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 2rem;
   }
 }
 
